@@ -43,7 +43,7 @@ int main()
 	printf("Introduzca un nombre para buscar su edad: ");
 	gets(find);
 	
-	//Ale dice que por un while strcmp no sea find...mas eficiente porque no da tantas vueltas.
+	//Ale dice que por un while strcmp no sea 'find'...mas eficiente porque no da tantas vueltas.
 	
 	for (i=0; i<MAX_PERSON; i++){
 		if (strcmp(find, person[i].name) == 0) { 
