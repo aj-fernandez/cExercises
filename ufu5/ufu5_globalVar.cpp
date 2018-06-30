@@ -1,9 +1,9 @@
-/*Construye el código en lenguaje C de un programa que pidiendo un número por teclado, sirva
-para simular el lanzamiento de tantos dados al azar como el número introducido. La función
-generará un número aleatorio al estilo de un dado, que devolverá a la función invocadora, que
-los irá mostrando en pantalla según le lleguen.*/
+/*Construye el cï¿½digo en lenguaje C de un programa que pidiendo un nï¿½mero por teclado, sirva
+para simular el lanzamiento de tantos dados al azar como el nï¿½mero introducido. La funciï¿½n
+generarï¿½ un nï¿½mero aleatorio al estilo de un dado, que devolverï¿½ a la funciï¿½n invocadora, que
+los irï¿½ mostrando en pantalla segï¿½n le lleguen.*/
 
-//Versión 2 en la que utilizo solo 2 funciones (3 en la anterior) a camnbio de declarar un variable global.
+//Versiï¿½n 2 en la que utilizo solo 2 funciones (3 en la anterior) a camnbio de declarar un variable global.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,17 +13,18 @@ int main()
 {
 	int cant,cont;
 	void genRand(int cant);
-	srand((unsigned)time(NULL)); //El scope de srand() es global, aunque use rand() en otra funcion tomará esta seed para generar los numeros.
-	
-	printf("Introduzca la cantidad de numeros random que desea recibir: ");	
+	srand((unsigned)time(NULL)); //El scope de srand() es global, aunque use rand() en otra funcion tomarï¿½ esta seed para generar los numeros.
+
+	printf("Introduzca la cantidad de numeros random que desea recibir: ");
 	scanf("%i",&cant);
 	fflush(stdin);
-	
+
 	for (cont=0;cont<cant;cont++)
 	{
 		genRand(cant);
 		printf("Numero random: %i\n",numRand);
 	}
+	getchar();
 	return 0;
 }
 int genRand(int cant)

@@ -1,0 +1,40 @@
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c: In function ‘main’:
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c:28:2: warning: implicit declaration of function ‘gets’ [-Wimplicit-function-declaration]
+  gets(pEmp.name);
+  ^~~~
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c:28:11: error: ‘pEmp’ is a pointer; did you mean to use ‘->’?
+  gets(pEmp.name);
+           ^
+           ->
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c:29:34: error: ‘i’ undeclared (first use in this function)
+  printf("Introduzca apellidos: ",i+1);
+                                  ^
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c:29:34: note: each undeclared identifier is reported only once for each function it appears in
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c:30:12: error: ‘pEmp’ is a pointer; did you mean to use ‘->’?
+  gets(*pEmp.lastName);
+            ^
+            ->
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c:32:19: error: ‘pEmp’ is a pointer; did you mean to use ‘->’?
+  scanf("%i",&*pEmp.age);
+                   ^
+                   ->
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c:35:19: error: ‘pEmp’ is a pointer; did you mean to use ‘->’?
+  scanf("%f",&*pEmp.salary);
+                   ^
+                   ->
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c:38:80: error: ‘pEmp’ is a pointer; did you mean to use ‘->’?
+  printf("Empleado numero es: %s %s con edad %i y salario de %.2f\n", i+1, *pEmp.name, *pEmp.lastName,*pEmp.age, *pEmp.salary);
+                                                                                ^
+                                                                                ->
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c:38:92: error: ‘pEmp’ is a pointer; did you mean to use ‘->’?
+  printf("Empleado numero es: %s %s con edad %i y salario de %.2f\n", i+1, *pEmp.name, *pEmp.lastName,*pEmp.age, *pEmp.salary);
+                                                                                            ^
+                                                                                            ->
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c:38:107: error: ‘pEmp’ is a pointer; did you mean to use ‘->’?
+  printf("Empleado numero es: %s %s con edad %i y salario de %.2f\n", i+1, *pEmp.name, *pEmp.lastName,*pEmp.age, *pEmp.salary);
+                                                                                                           ^
+                                                                                                           ->
+/home/ajfernandez/myRepos/cExercises/ues5/ues_5.c:38:118: error: ‘pEmp’ is a pointer; did you mean to use ‘->’?
+  printf("Empleado numero es: %s %s con edad %i y salario de %.2f\n", i+1, *pEmp.name, *pEmp.lastName,*pEmp.age, *pEmp.salary);
+                                                                                                                      ^
+                                                                                                                      ->

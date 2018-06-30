@@ -1,9 +1,9 @@
-/* Construye el código en lenguaje C de un programa que pidiendo por teclado la
- * introducción del nombre, apellidos, edad y sueldo de un trabajador, quedan almacenados en
- * estructura adecuada y posteriormente se imprimen por pantalla. La limitación es que el
- * acceso a la estructura se realizará mediante un puntero.
+/* Construye el cï¿½digo en lenguaje C de un programa que pidiendo por teclado la
+ * introducciï¿½n del nombre, apellidos, edad y sueldo de un trabajador, quedan almacenados en
+ * estructura adecuada y posteriormente se imprimen por pantalla. La limitaciï¿½n es que el
+ * acceso a la estructura se realizarï¿½ mediante un puntero.
  */
- 
+
 #include <stdio.h>
 #include <string.h>
 #define MAX_EMPLOYEES 3
@@ -19,11 +19,11 @@ struct empData {
 int main()
 {
 	struct empData emp; //Variable del tipo 'struct empData'.
-	
-	struct empData *pEmp; // Declaración de puntero a un array de estructuras tipo 'struct empData'.
-							  
-	pEmp = &emp; //Asigno el puntero  a la dirección de mi  estructura.
-	 
+
+	struct empData *pEmp; // Declaraciï¿½n de puntero a un array de estructuras tipo 'struct empData'.
+
+	pEmp = &emp; //Asigno el puntero  a la direcciï¿½n de mi  estructura.
+
 	printf("Introduzca el nombre: ");
 	gets(pEmp.name);
 	printf("Introduzca apellidos: ",i+1);
@@ -34,9 +34,9 @@ int main()
 	printf("Introduzca salario: ",i+1);
 	scanf("%f",&*pEmp.salary);
 	fflush(stdin);
-	
+
 	printf("Empleado numero es: %s %s con edad %i y salario de %.2f\n", i+1, *pEmp.name, *pEmp.lastName,*pEmp.age, *pEmp.salary);
-	
-	
+
+
 	return 0;
 }
