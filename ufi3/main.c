@@ -89,7 +89,7 @@ int main() {
             getchar(); // TODO: remove '\n' for next fgets() because 'fflush(stdin)' seems doesn't flush the stream.
             fgets(item.desc, 30, stdin);
             printf("\n\tInsert item[%i] price: ", i);
-            scanf("%i", &item.price);
+            scanf("%i", &item.price); // TODO: compiling on Windows printf() this &item.price in show() is wrong.
             printf("\n");
             fwrite(&item, sizeof(item), 1, pFile);
             i++;
