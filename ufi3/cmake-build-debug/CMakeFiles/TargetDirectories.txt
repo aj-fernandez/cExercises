@@ -1,0 +1,3 @@
+/home/ajfernandez/CLionProjects/ufi3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ajfernandez/CLionProjects/ufi3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ajfernandez/CLionProjects/ufi3/cmake-build-debug/CMakeFiles/ufi3.dir

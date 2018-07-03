@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ajfernandez/CLionProjects/ufi3/main.c
+stdio.h
+-
+structure.h
+/home/ajfernandez/CLionProjects/ufi3/structure.h
+
+/home/ajfernandez/CLionProjects/ufi3/structure.h
+

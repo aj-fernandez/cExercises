@@ -1,6 +1,6 @@
-/* Construye el código en lenguaje C de un programa que cuente el número de registros
- * que tiene el fichero CURRITOS.DAT. Al final deberá imprimirse en pantalla ese número
- * calculado y también la media de edad de los trabajadores, así como la suma de los sueldos de
+/* Construye el cï¿½digo en lenguaje C de un programa que cuente el nï¿½mero de registros
+ * que tiene el fichero CURRITOS.DAT. Al final deberï¿½ imprimirse en pantalla ese nï¿½mero
+ * calculado y tambiï¿½n la media de edad de los trabajadores, asï¿½ como la suma de los sueldos de
  * estos.
  */
 
@@ -12,20 +12,20 @@ struct employee
 		char lastN[25];
 		char firstN[15];
 		unsigned int age;
-		float salary;	
+		float salary;
 	};
 
 int main()
 {
 	int i = 0, avg = 0, sumAge = 0;
 	double add = 0;
-	
+
 	FILE *pFile;
 	pFile = fopen("curritos.dat","rb");
-	 
+
 	typedef struct employee TypeEmp;
 	TypeEmp emp;
-	
+
 	if (pFile == NULL) {
 		printf("Error: The file could not be opened. \n");
 		getchar();
@@ -39,18 +39,18 @@ int main()
 			printf("\n");
 			add = add + emp.salary;
 			sumAge = sumAge + emp.age;
-			i++;	
+			i++;
 		}
 	}
-	
+
 	avg = sumAge/i;
-	
+
 	printf("\n\nNumber of records with size '%i' bytes per record is: %i\n",sizeof(emp),i);
-	
-	printf("The average age of the employees is: %i\n", avg);	
-	
+
+	printf("The average age of the employees is: %i\n", avg);
+
 	printf("The sum of salary of the employees is: %.2f", add);
-	
+
 	fclose(pFile);
 	return 0;
 }
