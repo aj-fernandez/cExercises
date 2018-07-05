@@ -18,7 +18,7 @@ typedef struct article {
     int cod;            // 4 bytes
     char desc[30];      // 1 byte
     int price;          // 4 bytes
-}TypeItem;              // Total structure size: 40 bytes
+}TypeItem;              // Total structure size: 40 bytes,  xD? (30*1)+4+4-> 38 bytes.
 
 #endif //UFI3_STRUCTURE_H
 

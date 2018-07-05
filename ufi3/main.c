@@ -1,9 +1,14 @@
+// Dar de alta un producto.
+// Consultar un producto.
+// Listar todos los productos.
 //
 // Created by ajfernandez on 7/3/18.
 //
 
 #include <stdio.h>
+#include <string.h>
 #include "structure.h"
+#define FIRST_ITEMS 1
 
 void show()
 {
@@ -39,7 +44,7 @@ void newItem() {
     pFile = fopen("articulos.dat", "a");
 
     printf("Add a new item? ('y'es or 'n'ot)");
-    getchar(); // Without this; opt = 10 (LF). fflush(stdin) don't do nothing here and i need to consume LF (line feed).
+    getchar(); // Without this; opt = 10 (LF). 'fflush(stdin)' don't do nothing here and i need to consume LF (line feed).
     scanf("%c", &opt);
 
     if (pFile == NULL) {
@@ -67,17 +72,45 @@ void newItem() {
     printf("%i new items were added.", i);
 }
 
+void findItem() {
+
+    FILE *pFile;
+    pFile = fopen("articulos.dat", "r");
+
+    TypeItem item;
+
+    char keyWord[10];
+    memset(keyWord, '\0', sizeof(keyWord)); // Unknown behaviour if the block of memory assigned has garbage.
+
+    printf("Type a keyword of product specifications (max. 10 characters ): ");
+    getchar();
+    fgets(keyWord, 10, stdin);
+
+    if (pFile == NULL) {
+        printf("Error: the file could not be created/opened.");
+    }else {
+        while (fread(&item, sizeof(item), 1, pFile) == 1) {
+            if (strstr(item.desc, keyWord) != NULL) { //NULL is a MACRO, in this case null pointer evaluates to 0 or 0L.
+                printf("'%s' found in article with code %i an price %i.\n", keyWord, item.cod, item.price);
+            }else if (fread(&item, sizeof(item), 1, pFile) == 0) {
+                printf("EOF reached without any occurrence of keyword '%s'.\n", keyWord);
+            }
+        }
+    }
+}
+
 int main() {
 
-    int maxItem = 1;
+    int maxItem = FIRST_ITEMS;
     int i = 0;
+    int opt;
 
     FILE *pFile;
     pFile = fopen("articulos.dat","w");
 
     TypeItem item;
 
-    printf("Now you must fill the items info; 5 elements for this PoC.\n");
+    printf("Now you must fill the items info; 5 initial elements for this PoC.\n");
 
     if (pFile == NULL) {
         printf("Error: the file could not be created/opened.");
@@ -97,8 +130,14 @@ int main() {
         fclose(pFile);
     }
 
+    // menu with switch here.
+    // 1 function remaining: select a specific item to list (not all).
+
+
     show();
     newItem();
+    show();
+    findItem();
 
     return 0;
 }

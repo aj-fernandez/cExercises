@@ -9,6 +9,8 @@
 /home/ajfernandez/CLionProjects/ufi3/main.c
 stdio.h
 -
+string.h
+-
 structure.h
 /home/ajfernandez/CLionProjects/ufi3/structure.h
 
