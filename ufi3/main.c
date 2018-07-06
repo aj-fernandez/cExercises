@@ -10,8 +10,7 @@
 #include "structure.h"
 #define FIRST_ITEMS 1
 
-void show()
-{
+void show() {
     int i = 0 ;
 
     FILE *pFile;
@@ -21,7 +20,6 @@ void show()
 
     if (pFile == NULL) {
         printf("Error: The file could not be opened. \n");
-        getchar();
     }else {
         while (fread(&item, sizeof(item), 1, pFile) == 1) {
             printf("\nInformation about articles: \n\n\tCode: %i", item.cod);
@@ -41,35 +39,31 @@ void newItem() {
     TypeItem newIt;
 
     FILE *pFile;
-    pFile = fopen("articulos.dat", "a");
+    pFile = fopen("articulos.dat", "ab");
 
-    printf("Add a new item? ('y'es or 'n'ot)");
-    getchar(); // Without this; opt = 10 (LF). 'fflush(stdin)' don't do nothing here and i need to consume LF (line feed).
-    scanf("%c", &opt);
+    printf("\nAdd a new item? ('y'es or 'n'ot)");
+    scanf("%c%*c", &opt);
 
     if (pFile == NULL) {
         printf("Error: the file could not be created/opened.");
     }else {
         while (opt == 121) {
             printf("\n\tInsert item[%i] code (max -> 9999): ", i);
-            scanf("%i", &newIt.cod);
-            getchar();
+            scanf("%i%*c", &newIt.cod);
             printf("\n\tInsert a item[%i] description (max -> 30 characters): ", i);
-            fgets(newIt.desc, 30, stdin);
+            fgets(newIt.desc, 30, stdin); // Dont need remove '\n', next scanf() exclude it '...*c' ->any char, escape character too
             printf("\n\tInsert item[%i] price: ", i);
-            scanf("%i", &newIt.price);
-            getchar();
+            scanf("%i%*c", &newIt.price);
             printf("\n");
             fwrite(&newIt, sizeof(newIt), 1, pFile);
-            printf("Add a new item? ('y'es or 'n'ot)");
-            scanf("%c", &opt);
-            getchar();
+            printf("Add a new item? ('y'es or 'n'ot)\n");
+            scanf("%c%*c", &opt);
             i++;
         }
         fclose(pFile);
     }
 
-    printf("%i new items were added.", i);
+    printf("%i new items were added.\n", i);
 }
 
 void findItem() {
@@ -80,17 +74,17 @@ void findItem() {
     TypeItem item;
 
     char keyWord[10];
-    memset(keyWord, '\0', sizeof(keyWord)); // Unknown behaviour if the block of memory assigned has garbage.
+    memset(keyWord, '\0', sizeof(keyWord)); // Set array to zero, unknown behaviour if the block of memory assigned has garbage
 
-    printf("Type a keyword of product specifications (max. 10 characters ): ");
-    getchar();
+    printf("\nType a keyword of product specifications (max. 10 characters ): ");
     fgets(keyWord, 10, stdin);
+    strtok(keyWord, "\n"); // Need remove escape character so that strstr() can compare strings in the correct way
 
     if (pFile == NULL) {
         printf("Error: the file could not be created/opened.");
     }else {
         while (fread(&item, sizeof(item), 1, pFile) == 1) {
-            if (strstr(item.desc, keyWord) != NULL) { //NULL is a MACRO, in this case null pointer evaluates to 0 or 0L.
+            if (strstr(item.desc, keyWord) != NULL) { //NULL is a MACRO, in this case null pointer evaluates to 0 or 0L
                 printf("'%s' found in article with code %i an price %i.\n", keyWord, item.cod, item.price);
             }else if (fread(&item, sizeof(item), 1, pFile) == 0) {
                 printf("EOF reached without any occurrence of keyword '%s'.\n", keyWord);
@@ -110,19 +104,18 @@ int main() {
 
     TypeItem item;
 
-    printf("Now you must fill the items info; 5 initial elements for this PoC.\n");
+    printf("Now you must fill the items info; %i initial elements for this PoC.\n", FIRST_ITEMS);
 
     if (pFile == NULL) {
         printf("Error: the file could not be created/opened.");
     }else {
         while(maxItem--) {
             printf("\n\tInsert item[%i] code (max -> 9999): ", i);
-            scanf("%i", &item.cod);
+            scanf("%i%*c", &item.cod);
             printf("\n\tInsert a item[%i] description (max -> 30 characters): ", i);
-            getchar(); // TODO: remove '\n' for next fgets() because 'fflush(stdin)' seems doesn't flush the stream.
             fgets(item.desc, 30, stdin);
             printf("\n\tInsert item[%i] price: ", i);
-            scanf("%i", &item.price); // TODO: compiling on Windows printf() this &item.price in show() is wrong.
+            scanf("%i%*c", &item.price); // TODO: compiling on Windows printf() this &item.price in show() is wrong.
             printf("\n");
             fwrite(&item, sizeof(item), 1, pFile);
             i++;
@@ -130,14 +123,21 @@ int main() {
         fclose(pFile);
     }
 
-    // menu with switch here.
-    // 1 function remaining: select a specific item to list (not all).
+    do {
+        printf("\n1. Add new items to file\n2. Show items\n3. Find item\n4. Exit\n\n\t Select a option: ");
+        scanf("%i%*c", &opt);
 
-
-    show();
-    newItem();
-    show();
-    findItem();
+        switch (opt) {
+            case 1: newItem();
+                break;
+            case 2: show();
+                break;
+            case 3: findItem();
+                break;
+            case 4: return 0;
+            default: printf("\nMust enter a int among 1 - 4");
+        }
+    }while (opt != 4);
 
     return 0;
 }
