@@ -1,0 +1,3 @@
+/home/ajfernandez/CLionProjects/ChatAttempHttpServer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ajfernandez/CLionProjects/ChatAttempHttpServer/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ajfernandez/CLionProjects/ChatAttempHttpServer/cmake-build-debug/CMakeFiles/ChatAttempHttpServer.dir
