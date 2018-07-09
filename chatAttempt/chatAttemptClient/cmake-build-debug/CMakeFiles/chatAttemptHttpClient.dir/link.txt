@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/chatAttemptHttpClient.dir/main.c.o  -o chatAttemptHttpClient 

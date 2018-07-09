@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ajfernandez/CLionProjects/chatAttemptClient/main.c
+/home/ajfernandez/CLionProjects/chatAttemptHttpClient/main.c
 stdio.h
 -
 sys/types.h

@@ -1,4 +1,4 @@
-/home/ajfernandez/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.5281.33/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ajfernandez/CLionProjects/chatAttemptClient
+/home/ajfernandez/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.5281.33/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ajfernandez/CLionProjects/chatAttemptHttpClient
 -- The C compiler identification is GNU 6.3.0
 -- Check for working C compiler: /usr/bin/cc
 -- Check for working C compiler: /usr/bin/cc -- works
@@ -8,4 +8,4 @@
 -- Detecting C compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/ajfernandez/CLionProjects/chatAttemptClient/cmake-build-debug
+-- Build files have been written to: /home/ajfernandez/CLionProjects/chatAttemptHttpClient/cmake-build-debug

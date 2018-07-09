@@ -8,7 +8,7 @@
 #include <strings.h> // bzero()
 #include <unistd.h> // close()
 
-#define PORT 2018 // remote server port
+#define PORT 80 // remote server port
 #define MAXDATASIZE 100 // data max in bytes
 
 

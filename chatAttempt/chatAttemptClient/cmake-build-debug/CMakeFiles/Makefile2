@@ -54,45 +54,45 @@ RM = /home/ajfernandez/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.5281.3
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ajfernandez/CLionProjects/chatAttemptClient
+CMAKE_SOURCE_DIR = /home/ajfernandez/CLionProjects/chatAttemptHttpClient
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ajfernandez/CLionProjects/chatAttemptClient/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ajfernandez/CLionProjects/chatAttemptHttpClient/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/chatAttemptClient.dir
+# Target rules for target CMakeFiles/chatAttemptHttpClient.dir
 
 # All Build rule for target.
-CMakeFiles/chatAttemptClient.dir/all:
-	$(MAKE) -f CMakeFiles/chatAttemptClient.dir/build.make CMakeFiles/chatAttemptClient.dir/depend
-	$(MAKE) -f CMakeFiles/chatAttemptClient.dir/build.make CMakeFiles/chatAttemptClient.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ajfernandez/CLionProjects/chatAttemptClient/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target chatAttemptClient"
-.PHONY : CMakeFiles/chatAttemptClient.dir/all
+CMakeFiles/chatAttemptHttpClient.dir/all:
+	$(MAKE) -f CMakeFiles/chatAttemptHttpClient.dir/build.make CMakeFiles/chatAttemptHttpClient.dir/depend
+	$(MAKE) -f CMakeFiles/chatAttemptHttpClient.dir/build.make CMakeFiles/chatAttemptHttpClient.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ajfernandez/CLionProjects/chatAttemptHttpClient/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target chatAttemptHttpClient"
+.PHONY : CMakeFiles/chatAttemptHttpClient.dir/all
 
 # Include target in all.
-all: CMakeFiles/chatAttemptClient.dir/all
+all: CMakeFiles/chatAttemptHttpClient.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/chatAttemptClient.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajfernandez/CLionProjects/chatAttemptClient/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/chatAttemptClient.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajfernandez/CLionProjects/chatAttemptClient/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/chatAttemptClient.dir/rule
+CMakeFiles/chatAttemptHttpClient.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajfernandez/CLionProjects/chatAttemptHttpClient/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/chatAttemptHttpClient.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajfernandez/CLionProjects/chatAttemptHttpClient/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/chatAttemptHttpClient.dir/rule
 
 # Convenience name for target.
-chatAttemptClient: CMakeFiles/chatAttemptClient.dir/rule
+chatAttemptHttpClient: CMakeFiles/chatAttemptHttpClient.dir/rule
 
-.PHONY : chatAttemptClient
-
-# clean rule for target.
-CMakeFiles/chatAttemptClient.dir/clean:
-	$(MAKE) -f CMakeFiles/chatAttemptClient.dir/build.make CMakeFiles/chatAttemptClient.dir/clean
-.PHONY : CMakeFiles/chatAttemptClient.dir/clean
+.PHONY : chatAttemptHttpClient
 
 # clean rule for target.
-clean: CMakeFiles/chatAttemptClient.dir/clean
+CMakeFiles/chatAttemptHttpClient.dir/clean:
+	$(MAKE) -f CMakeFiles/chatAttemptHttpClient.dir/build.make CMakeFiles/chatAttemptHttpClient.dir/clean
+.PHONY : CMakeFiles/chatAttemptHttpClient.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/chatAttemptHttpClient.dir/clean
 
 .PHONY : clean
 
